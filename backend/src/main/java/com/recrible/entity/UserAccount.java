@@ -31,6 +31,10 @@ public class UserAccount {
     @Column(name = "phone_number", length = 20, unique = true)
     private String phoneNumber;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role", nullable = false, length = 20)
+    private Role role;
+
     @OneToMany(mappedBy = "userAccount", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<CV> cvs;
 

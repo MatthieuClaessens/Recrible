@@ -17,18 +17,18 @@ public class CV {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cv_id")
-    private Long CVId;
+    private Long cvId;
 
     @Column(name = "cv_name", nullable = false)
-    private String CVName;
+    private String cvName;
 
     @Column(name = "cv_path", nullable = false)
-    private String CVPath;
+    private String cvPath;
 
     @Column(name = "cv_date", nullable = false)
-    private LocalDate CVDate;
+    private LocalDate cvDate;
 
 @ManyToOne(fetch = FetchType.LAZY)
-@JoinColumn(name = "user_account_id", nullable = false)
+@JoinColumn(name = "useraccount_id", nullable = false)
     private UserAccount userAccount;
 }
