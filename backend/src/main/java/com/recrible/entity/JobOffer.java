@@ -28,4 +28,6 @@ public class JobOffer {
 
     @Column(nullable = false)
     private LocalDate jobOfferDate;
+
+    @ManyToOne(mappedBy = "useraccount_id", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 }

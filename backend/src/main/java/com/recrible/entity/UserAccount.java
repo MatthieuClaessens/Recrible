@@ -3,7 +3,6 @@ package com.recrible.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
 import java.util.List;
 
 @Entity
@@ -23,7 +22,7 @@ public class UserAccount {
     @Column(name = "email", nullable = false, unique = true, length = 50)
     private String email;
 
-    @Column(name = "password", nullable = false, unique = true, length = 255)
+    @Column(name = "password", nullable = false, length = 255)
     private String password;
 
     @Column(name = "address", length = 100)
@@ -34,4 +33,8 @@ public class UserAccount {
 
     @OneToMany(mappedBy = "userAccount", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<CV> cvs;
+
+    @OneToMany(mappedBy = "userAccount", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<JobOffer> joboffers;
+
 }
