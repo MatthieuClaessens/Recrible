@@ -7,11 +7,12 @@ import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import java.time.LocalDate;
 
-@Entity
-@NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "job_offer")
 public class JobOffer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
