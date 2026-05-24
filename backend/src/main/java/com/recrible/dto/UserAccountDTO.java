@@ -1,4 +1,4 @@
 package com.recrible.dto;
 
-public class UserAccountDTO {
+public record UserAccountDTO (Long userAccountId, String accountName, String email) {
 }
