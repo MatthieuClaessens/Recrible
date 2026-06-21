@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="236a271d-866a-4f4d-8db5-a56a0a5373ec" name="Changes" comment="" />
+    <list default="true" id="236a271d-866a-4f4d-8db5-a56a0a5373ec" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,12 +57,15 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "copilot.chat.legacySessionMetadata.migrated": "true",
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Matth/Desktop/Formation/Java/Recrible",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -67,6 +75,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Matth\Desktop\Formation\Java\Recrible" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="RecribleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="Recrible" />
@@ -93,6 +106,7 @@
       <updated>1777111432013</updated>
       <workItem from="1777111433341" duration="1596000" />
       <workItem from="1777496839119" duration="147000" />
+      <workItem from="1782028838991" duration="138000" />
     </task>
     <servers />
   </component>

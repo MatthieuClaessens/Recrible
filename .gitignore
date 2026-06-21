@@ -1,0 +1,24 @@
+# Dependency
+node_modules/
+.pnpm-store/
+
+# Distribution/build folders
+.next/
+dist/
+build/
+out/
+
+# IDE and configuration
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environnement and secrets
+.env
+.env.local
+.env.*.local
+
+# System
+.DS_Store
+Thumbs.db
