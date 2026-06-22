@@ -1,9 +1,7 @@
 package com.recrible.mapper;
 
 import com.recrible.dto.CVDTO;
-import com.recrible.dto.UserAccountDTO;
 import com.recrible.entity.CV;
-import com.recrible.entity.UserAccount;
 import org.springframework.stereotype.Component;
 
 @Component
