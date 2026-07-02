@@ -1,4 +1,4 @@
-package com.recrible.dto;
+package com.recrible.CV;
 import jakarta.validation.constraints.NotBlank;
 
 import java.time.LocalDate;

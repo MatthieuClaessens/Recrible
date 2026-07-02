@@ -1,7 +1,5 @@
-package com.recrible.mapper;
+package com.recrible.JobOffer;
 
-import com.recrible.dto.JobOfferDTO;
-import com.recrible.entity.JobOffer;
 import org.springframework.stereotype.Component;
 
 @Component

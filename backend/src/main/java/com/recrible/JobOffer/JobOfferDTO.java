@@ -1,7 +1,6 @@
-package com.recrible.dto;
+package com.recrible.JobOffer;
 
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDate;
 

@@ -1,5 +1,6 @@
-package com.recrible.entity;
+package com.recrible.JobOffer;
 
+import com.recrible.UserAccount.UserAccount;
 import jakarta.persistence.*;
 import lombok.*;
 

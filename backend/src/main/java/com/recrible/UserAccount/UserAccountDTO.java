@@ -1,4 +1,4 @@
-package com.recrible.dto;
+package com.recrible.UserAccount;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

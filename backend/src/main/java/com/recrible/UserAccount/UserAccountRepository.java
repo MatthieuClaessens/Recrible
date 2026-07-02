@@ -1,6 +1,5 @@
-package com.recrible.repository;
+package com.recrible.UserAccount;
 
-import com.recrible.entity.UserAccount;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

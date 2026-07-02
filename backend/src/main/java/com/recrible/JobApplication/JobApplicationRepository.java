@@ -1,9 +1,8 @@
-package com.recrible.repository;
+package com.recrible.JobApplication;
 
-import com.recrible.entity.CV;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CVRepository extends JpaRepository<CV, Long> {
+public interface JobApplicationRepository extends JpaRepository<JobApplication, Long> {
 }

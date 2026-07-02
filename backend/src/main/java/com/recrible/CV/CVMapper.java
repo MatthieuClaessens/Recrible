@@ -1,7 +1,5 @@
-package com.recrible.mapper;
+package com.recrible.CV;
 
-import com.recrible.dto.CVDTO;
-import com.recrible.entity.CV;
 import org.springframework.stereotype.Component;
 
 @Component

@@ -1,7 +1,5 @@
-package com.recrible.mapper;
+package com.recrible.UserAccount;
 
-import com.recrible.dto.UserAccountDTO;
-import com.recrible.entity.UserAccount;
 import org.springframework.stereotype.Component;
 
 @Component
