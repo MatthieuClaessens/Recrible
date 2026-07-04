@@ -10,7 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class UserAccountService implements UserAccountImplement {
     private final UserAccountMapper userAccountMapper;
-
     private final UserAccountRepository userAccountRepository;
 
     private void ensureUserAccountExists(Long userAccountId) {
@@ -20,9 +19,11 @@ public class UserAccountService implements UserAccountImplement {
     }
 
     @Override
-    public UserAccountDTO createUserAccount(UserAccountDTO userAccountDTO) {
-        UserAccount userAccount = userAccountMapper.fromDTO(userAccountDTO);
-        return saveAndReturn(userAccount);
+    public UserAccountDTO createUserAccount(UserAccountDTO dto) {
+        if (userAccountRepository.existsByEmail(dto.email())) {
+            throw new IllegalArgumentException("Email already taken!");
+        }
+        return saveAndReturn(userAccountMapper.fromDTO(dto));
     }
 
     @Override
@@ -33,9 +34,8 @@ public class UserAccountService implements UserAccountImplement {
 
     @Override
     public UserAccountDTO editUserAccount(UserAccountDTO userAccountDTO) {
-        UserAccount userAccount = userAccountMapper.fromDTO(userAccountDTO);
         ensureUserAccountExists(userAccountDTO.userAccountId());
-        return saveAndReturn(userAccount);
+        return saveAndReturn(userAccountMapper.fromDTO(userAccountDTO));
     }
 
     @Override
@@ -46,7 +46,6 @@ public class UserAccountService implements UserAccountImplement {
 
 
     private UserAccountDTO saveAndReturn(UserAccount userAccount) {
-        UserAccount savedUserAccount = userAccountRepository.save(userAccount);
-        return userAccountMapper.toDTO(savedUserAccount);
+        return userAccountMapper.toDTO(userAccountRepository.save(userAccount));
     }
 }
