@@ -27,6 +27,7 @@ public class UserAccountService implements UserAccountImplement {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public UserAccountDTO readUserAccount(Long id) {
         return userAccountRepository.findById(id)
                 .map(userAccountMapper::toDTO)
