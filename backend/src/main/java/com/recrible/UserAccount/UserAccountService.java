@@ -31,7 +31,8 @@ public class UserAccountService implements UserAccountImplement {
     public UserAccountDTO readUserAccount(Long id) {
         return userAccountRepository.findById(id)
                 .map(userAccountMapper::toDTO)
-                .orElseThrow(() -> new EntityNotFoundException("User account with ID " + id + " not found"));    }
+                .orElseThrow(() -> new EntityNotFoundException("User account with ID " + id + " not found"));
+    }
 
     @Override
     public UserAccountDTO editUserAccount(UserAccountDTO userAccountDTO) {
