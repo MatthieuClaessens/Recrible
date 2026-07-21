@@ -15,10 +15,9 @@ public class CVService implements CVImplement {
     private final CVRepository cvRepository;
 
 
-    private void ensureCVExists(Long cvId) {
-        if (!cvRepository.existsById(cvId)) {
-            throw new EntityNotFoundException("CV with ID " + cvId + " not found");
-        }
+    private CV ensureCVExists(Long cvId) {
+        return cvRepository.findById(cvId)
+                .orElseThrow(() -> new EntityNotFoundException("CV with ID " + cvId + " not found"));
     }
 
     private CVDTO saveAndReturn(CV cv) {
@@ -32,13 +31,14 @@ public class CVService implements CVImplement {
 
     @Override
     public CVDTO readCV(Long cvId) {
-        return cvMapper.toDTO(cvRepository.findById(cvId).orElseThrow(() -> new EntityNotFoundException("CV with ID " + cvId + " not found")));
+        return cvMapper.toDTO(ensureCVExists(cvId));
     }
 
     @Override
-    public CVDTO editCV(CVDTO cvDTO) {
-        ensureCVExists(cvDTO.cvId());
-        return saveAndReturn(cvMapper.fromDTO(cvDTO));
+    public CVDTO editCV(Long cvId, String cvName) {
+        CV cv = ensureCVExists(cvId);
+        cv.setCvName(cvName);
+        return saveAndReturn(cv);
     }
 
     @Override

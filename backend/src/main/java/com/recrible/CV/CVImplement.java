@@ -4,6 +4,6 @@ public interface CVImplement {
 
     CVDTO createCV(CVDTO cvdto);
     CVDTO readCV(Long cvId);
-    CVDTO editCV(CVDTO cvDTO);
+    CVDTO editCV(Long cvId, String cvName);
     void deleteCV(Long cvId);
 }
