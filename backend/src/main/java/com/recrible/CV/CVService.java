@@ -43,6 +43,7 @@ public class CVService implements CVImplement {
 
     @Override
     public void deleteCV(Long cvId) {
+        ensureCVExists(cvId);
         cvRepository.deleteById(cvId);
     }
 }

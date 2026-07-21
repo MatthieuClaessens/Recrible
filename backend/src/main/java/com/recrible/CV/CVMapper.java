@@ -15,7 +15,6 @@ public class CVMapper {
 
     public CV fromDTO(CVDTO cvDTO) {
         if (cvDTO == null) return null;
-
         return CV.builder()
                 .cvId(cvDTO.cvId())
                 .cvName(cvDTO.cvName())

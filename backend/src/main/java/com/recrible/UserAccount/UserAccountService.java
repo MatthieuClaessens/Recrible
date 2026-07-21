@@ -9,13 +9,13 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 @Transactional
 public class UserAccountService implements UserAccountImplement {
+
     private final UserAccountMapper userAccountMapper;
     private final UserAccountRepository userAccountRepository;
 
-    private void ensureUserAccountExists(Long userAccountId) {
-        if (!userAccountRepository.existsById(userAccountId)) {
-            throw new EntityNotFoundException("User account with ID" + userAccountId + " not found");
-        }
+    private UserAccount ensureUserAccountExists(Long userAccountId) {
+        return userAccountRepository.findById(userAccountId)
+                .orElseThrow(() -> new EntityNotFoundException("User account with ID " + userAccountId + " not found"));
     }
 
     @Override
@@ -28,10 +28,8 @@ public class UserAccountService implements UserAccountImplement {
 
     @Override
     @Transactional(readOnly = true)
-    public UserAccountDTO readUserAccount(Long id) {
-        return userAccountRepository.findById(id)
-                .map(userAccountMapper::toDTO)
-                .orElseThrow(() -> new EntityNotFoundException("User account with ID " + id + " not found"));
+    public UserAccountDTO readUserAccount(Long userAccountId) {
+        return userAccountMapper.toDTO(ensureUserAccountExists(userAccountId));
     }
 
     @Override
@@ -45,7 +43,6 @@ public class UserAccountService implements UserAccountImplement {
         ensureUserAccountExists(userAccountId);
         userAccountRepository.deleteById(userAccountId);
     }
-
 
     private UserAccountDTO saveAndReturn(UserAccount userAccount) {
         return userAccountMapper.toDTO(userAccountRepository.save(userAccount));
