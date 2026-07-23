@@ -33,14 +33,7 @@ public class CVService implements CVImplement {
     public CVDTO readCV(Long cvId) {
         return cvMapper.toDTO(ensureCVExists(cvId));
     }
-
-    @Override
-    public CVDTO editCV(Long cvId, String cvName) {
-        CV cv = ensureCVExists(cvId);
-        cv.setCvName(cvName);
-        return saveAndReturn(cv);
-    }
-
+    
     @Override
     public void deleteCV(Long cvId) {
         ensureCVExists(cvId);
