@@ -25,7 +25,7 @@ public class JobApplicationService implements JobApplicationImplement {
     private JobApplicationDTO saveAndReturn(JobApplication jobApplication) {
         return jobApplicationMapper.toDTO(jobApplicationRepository.save(jobApplication));
     }
-    
+
     @Override
     @Transactional
     public JobApplicationDTO createJobApplication(JobApplicationDTO jobApplicationDTO, Long jobOfferId) {
