@@ -1,18 +1,20 @@
 package com.recrible.JobApplication;
 
 
+import com.recrible.JobOffer.*;
 import jakarta.persistence.EntityNotFoundException;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-@AllArgsConstructor
-@Transactional
+@RequiredArgsConstructor
+@Transactional(readOnly = true)
 public class JobApplicationService implements JobApplicationImplement {
-    private final JobApplicationMapper jobaApplicationMapper;
-
+    private final JobApplicationMapper jobApplicationMapper;
     private final JobApplicationRepository jobApplicationRepository;
+    private final JobOfferRepository jobOfferRepository;
+    private final JobOfferService jobOfferService;
 
     private JobApplication ensureJobApplicationExists(Long jobApplicationId) {
         return jobApplicationRepository.findById(jobApplicationId)
@@ -20,20 +22,32 @@ public class JobApplicationService implements JobApplicationImplement {
     }
 
     private JobApplicationDTO saveAndReturn(JobApplication jobApplication) {
-        return jobaApplicationMapper.toDTO(jobApplicationRepository.save(jobApplication));
+        return jobApplicationMapper.toDTO(jobApplicationRepository.save(jobApplication));
     }
 
     @Override
-    public JobApplicationDTO createJobApplication(JobApplicationDTO jobApplicationDTO) {
-        return saveAndReturn(jobaApplicationMapper.fromDTO(jobApplicationDTO));
-    }
+    @Transactional
+    public JobApplicationDTO createJobApplication(JobApplicationDTO jobApplicationDTO, Long jobOfferId) {
+        JobOffer jobOffer = jobOfferRepository.findById(jobOfferId)
+                .orElseThrow(() -> new EntityNotFoundException("Job offer with ID " + jobOfferId + " not found"));
+
+        if (!jobOffer.isJobOfferState()) {
+            throw new IllegalStateException("Job application state is not active");
+        }
+
+            JobApplication jobApplication = jobApplicationMapper.fromDTO(jobApplicationDTO);
+            jobApplication.setJobOffer(jobOffer);
+
+            return saveAndReturn(jobApplication);
+        }
 
     @Override
     public JobApplicationDTO readJobApplication(Long jobApplicationId) {
-        return jobaApplicationMapper.toDTO(ensureJobApplicationExists(jobApplicationId));
+        return jobApplicationMapper.toDTO(ensureJobApplicationExists(jobApplicationId));
     }
 
     @Override
+    @Transactional
     public void deleteJobApplication(Long jobApplicationId) {
         ensureJobApplicationExists(jobApplicationId);
         jobApplicationRepository.deleteById(jobApplicationId);

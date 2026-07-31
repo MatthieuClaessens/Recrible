@@ -10,6 +10,7 @@ public class JobApplicationMapper {
                 jobApplication.getJobApplicationId(),
                 jobApplication.getJobApplicationDate(),
                 jobApplication.getJobOffer().getJobOfferTitle(),
+                jobApplication.getJobOffer().isJobOfferState(),
                 jobApplication.getCv().getCvName()
         );
     }

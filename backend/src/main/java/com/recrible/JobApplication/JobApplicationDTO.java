@@ -4,4 +4,5 @@ import java.time.LocalDate;
 public record JobApplicationDTO(Long jobApplicationId,
                                 LocalDate jobApplicationDate,
                                 String jobOfferTitle,
+                                boolean jobOfferState,
                                 String cvName) {}
