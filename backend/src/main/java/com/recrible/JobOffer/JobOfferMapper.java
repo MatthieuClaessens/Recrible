@@ -11,6 +11,7 @@ public class JobOfferMapper {
                 jobOffer.getJobOfferTitle(),
                 jobOffer.getJobOfferDescription(),
                 jobOffer.getJobOfferRequirements(),
+                jobOffer.isJobOfferState(),
                 jobOffer.getJobOfferDate()
         );
     }
