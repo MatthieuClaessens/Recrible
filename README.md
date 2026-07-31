@@ -17,7 +17,7 @@
 ---
 
 ## 📖 Overview
-**Recrible** (a blend of *Recruit*, *Cible* [Target], and *Crucible*) is a modern recruitment platform designed to sort, filter, and seamlessly connect top talent (grains) with recruiter opportunities. 
+**Recrible** (a blend of *Recruit*, *Cible* [Target], and *Crible*) is a modern recruitment platform designed to sort, filter, and seamlessly connect top talent (grains) with recruiter opportunities. 
 
 > **💡 Engineering Decision:** To optimize performance and minimize infrastructure costs, Recrible adopts an innovative **multilith architecture**. The core business logic relies on a modular Spring Boot monolith, while security (JWT token generation and validation) is offloaded to a **high-performance Go (Golang) microservice**, eliminating unnecessary CPU overhead on the main application.
 
