@@ -1,5 +1,5 @@
 package com.recrible.UserAccount;
 
-public enum Role {
+public enum UserAccountRoleEnum {
     USER, CANDIDATE, RECRUITER, ADMIN;
 }

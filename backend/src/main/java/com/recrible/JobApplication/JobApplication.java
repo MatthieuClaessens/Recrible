@@ -24,6 +24,9 @@ public class JobApplication {
     @Column(name = "job_application_date", nullable = false)
     private LocalDate jobApplicationDate;
 
+    @Column(name = "job_application_state", nullable = false)
+    private String jobApplicationState = "PENDING";
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "job_offer_id", nullable = false)
     private JobOffer jobOffer;

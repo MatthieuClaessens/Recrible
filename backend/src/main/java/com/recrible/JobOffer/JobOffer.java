@@ -30,8 +30,8 @@ public class JobOffer {
     @Column(nullable = false)
     private LocalDate jobOfferDate;
 
-    @Column(nullable = false)
-    private boolean jobOfferState=true;
+    @Column(name = "job_offer_state", nullable = false)
+    String jobOfferState = "pending";
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "useraccount_id", nullable = false)
