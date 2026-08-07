@@ -24,6 +24,7 @@ public class JobApplication {
     @Column(name = "job_application_date", nullable = false)
     private LocalDate jobApplicationDate;
 
+    @Builder.Default
     @Column(name = "job_application_state", nullable = false)
     private String jobApplicationState = "PENDING";
 

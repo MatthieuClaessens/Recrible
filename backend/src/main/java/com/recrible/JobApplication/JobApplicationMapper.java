@@ -9,9 +9,10 @@ public class JobApplicationMapper {
         return new JobApplicationDTO(
                 jobApplication.getJobApplicationId(),
                 jobApplication.getJobApplicationDate(),
-                jobApplication.getJobOffer().getJobOfferTitle(),
-                jobApplication.getJobOffer().getJobOfferState(),
-                jobApplication.getCv().getCvName()
+                jobApplication.getJobOffer() != null ? jobApplication.getJobOffer().getJobOfferTitle() : null,
+                jobApplication.getJobApplicationState(),
+                jobApplication.getJobOffer() != null ? jobApplication.getJobOffer().getJobOfferState() : null,
+                jobApplication.getCv() != null ? jobApplication.getCv().getCvName() : null
         );
     }
 
