@@ -18,6 +18,7 @@ out/
 .env
 .env.local
 .env.*.local
+next-env.d.ts
 
 # System
 .DS_Store
