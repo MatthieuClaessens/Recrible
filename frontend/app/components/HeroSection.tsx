@@ -4,9 +4,9 @@ import ZaidSchwartz from "@/public/images/zaid-schwartz.png";
 export default function HeroSection() {
     return (
         <header>
-            <div className="max-w-7xl mx-auto w-full px-10 mt-12 grid grid-cols-1 lg:grid-cols-12 items-center gap-12">
+            <div className="max-w-7xl mx-auto w-full px-10 grid grid-cols-1 lg:grid-cols-12 items-center gap-12">
                 <div className="lg:col-span-8">
-                    <h1 className="text-black text-6xl font-semibold leading-tight">
+                    <h1 className="text-black text-6xl font-semibold leading-tight -mt-30">
                         Trouvez le poste<br />
                         qui vous <span className="text-[#2563EB]">ressemble</span>.
                     </h1>
@@ -26,11 +26,11 @@ export default function HeroSection() {
                     </div>
                 </div>
 
-                <div className="lg:col-span-4 flex justify-end items-end">
+                <div className="lg:col-span-4 flex justify-end items-end z-10">
                     <Image
                         src={ZaidSchwartz}
                         alt="Zaid Schwartz"
-                        className="w-full max-w-[3600px] h-auto object-contain"
+                        className="w-full max-w-[3600px] min-w-[545px] h-auto object-contain"
                     />
                 </div>
             </div>
