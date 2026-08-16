@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+:root {
+    --font-onest: 'Onest', sans-serif;
+}
+
+@theme {
+    --font-sans: var(--font-onest), sans-serif;
+}
