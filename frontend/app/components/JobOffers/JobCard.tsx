@@ -1,4 +1,14 @@
-import { JobOffer } from "../../types/JobOffer"
+import { JobOffer } from "../../types/JobOffer";
+
+const jobOffer: JobOffer = {
+    jobOfferId: 1,
+    jobOfferTitle: "Ingénieur Back-End",
+    jobOfferEntreprise: "Lorem ipsum",
+    jobOfferDescription: "Dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
+
+
+
+}
 
 export default function JobCard() {
     return (
