@@ -1,11 +1,12 @@
-import SearchBar from "./SearchBar";
+import JobCard from "./JobCard";
+import SearchBar from "./JobSearchBar";
 import { SlidersHorizontal } from "lucide-react";
 
 export default function JobOffers() {
     return (
-        <div className="bg-black w-full min-h-screen md:-mt-15 z-20 absolute text-center">
+        <div className="bg-black w-full min-h-screen md:-mt-15 z-20 absolute">
             <div className="max-w-7xl mx-auto px-10 relative -mt-13 z-30 mb-20">
-                <SearchBar/>
+                <SearchBar />
             </div>
             <div className="max-w-7xl mx-auto px-10">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -27,18 +28,7 @@ export default function JobOffers() {
                             <span className="text-gray-400 text-sm">Trier par : Plus récentes</span>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div className="bg-[#171717] border border-[#262626] rounded-2xl p-6 text-white">
-                                <p className="text-white">Carte offre 1</p>
-                            </div>
-                            <div className="bg-[#171717] border border-[#262626] rounded-2xl p-6 text-white">
-                                <p className="text-white">Carte offre 2</p>
-                            </div>
-                            <div className="bg-[#171717] border border-[#262626] rounded-2xl p-6 text-white">
-                                <p className="text-white">Carte offre 3</p>
-                            </div>
-                            <div className="bg-[#171717] border border-[#262626] rounded-2xl p-6 text-white">
-                                <p className="text-white">Carte offre 4</p>
-                            </div>
+                            <JobCard />
                         </div>
                     </main>
                 </div>
