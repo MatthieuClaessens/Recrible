@@ -1,3 +1,5 @@
+import { JobOffer } from "../../types/JobOffer"
+
 export default function JobCard() {
     return (
         <>

@@ -1,9 +1,9 @@
-export interface Job {
+export interface JobOffer {
     jobOfferId: number,
     jobOfferTitle: string,
     jobOfferDescription: string,
     jobOfferRequirements: string,
     jobOfferSalary: number,
-    jobOfferState: string,
+    jobOfferState: 'OPEN' | 'CLOSED' | 'PENDING';
     jobOfferDate: string;
 }
