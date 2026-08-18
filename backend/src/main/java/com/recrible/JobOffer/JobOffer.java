@@ -27,6 +27,10 @@ public class JobOffer {
     @Column(length = 200)
     private String jobOfferRequirements;
 
+    @Column
+    @Max(999999)
+    private Integer jobOfferSalary;
+
     @Column(nullable = false)
     private LocalDate jobOfferDate;
 

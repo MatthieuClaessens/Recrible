@@ -13,6 +13,7 @@ public record JobOfferDTO (
         @NotBlank(message = "{jobOffer.description.notblank}")
         String jobOfferDescription,
         String jobOfferRequirements,
+        Integer jobOfferSalary,
         String jobOfferState,
         LocalDate jobOfferDate) {
 }

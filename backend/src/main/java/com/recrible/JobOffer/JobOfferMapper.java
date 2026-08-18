@@ -11,6 +11,7 @@ public class JobOfferMapper {
                 jobOffer.getJobOfferTitle(),
                 jobOffer.getJobOfferDescription(),
                 jobOffer.getJobOfferRequirements(),
+                jobOffer.getJobOfferSalary(),
                 jobOffer.getJobOfferState(),
                 jobOffer.getJobOfferDate()
         );
@@ -23,6 +24,8 @@ public class JobOfferMapper {
                 .jobOfferTitle(jobOfferDTO.jobOfferTitle())
                 .jobOfferDescription(jobOfferDTO.jobOfferDescription())
                 .jobOfferRequirements(jobOfferDTO.jobOfferRequirements())
+                .jobOfferSalary(jobOfferDTO.jobOfferSalary())
+                .jobOfferState(jobOfferDTO.jobOfferState())
                 .jobOfferDate(jobOfferDTO.jobOfferDate())
                 .build();
     }
