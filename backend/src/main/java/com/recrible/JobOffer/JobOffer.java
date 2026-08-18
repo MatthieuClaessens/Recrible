@@ -1,7 +1,9 @@
 package com.recrible.JobOffer;
 
+import com.recrible.Entreprise.Entreprise;
 import com.recrible.UserAccount.UserAccount;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -41,4 +43,8 @@ public class JobOffer {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "useraccount_id", nullable = false)
     private UserAccount userAccount;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "entreprise_id", nullable = false)
+    private Entreprise entreprise;
 }
