@@ -22,6 +22,7 @@ public class JobApplicationMapper {
         return JobApplication.builder()
                 .jobApplicationId(jobApplicationDTO.jobApplicationId())
                 .jobApplicationDate(jobApplicationDTO.jobApplicationDate())
+                .jobApplicationState(jobApplicationDTO.jobApplicationState())
                 .build();
     }
 }

@@ -28,7 +28,7 @@ public class Entreprise {
     private String entrepriseDescription;
 
     @Column(name = "entreprise_website", length = 100)
-    private String website;
+    private String entrepriseWebsite;
 
     @OneToMany(mappedBy = "entreprise", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<JobOffer> jobOffers = new ArrayList<>();
